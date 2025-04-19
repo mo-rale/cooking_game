@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://1xufh05sbl21"]
+
+[ext_resource type="Script" uid="uid://b8g3k1ixphb1f" path="res://script/food_boxes/potato_box.gd" id="1_t5gc4"]
+[ext_resource type="PackedScene" uid="uid://dsn2iffbig2xg" path="res://scene/food/food_fries.tscn" id="2_1bv4k"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1gubw"]
+height = 1.0814
+radius = 0.684974
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qim78"]
+height = 1.38594
+radius = 0.782923
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7236"]
+albedo_color = Color(0.62, 0.326327, 0.0124, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3rv54"]
+
+[node name="potato_box" type="StaticBody3D"]
+script = ExtResource("1_t5gc4")
+food_scene = ExtResource("2_1bv4k")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 0, 0.0648706, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -0.00062108, 0)
+shape = SubResource("CylinderShape3D_1gubw")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.816315, 0)
+billboard = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CylinderShape3D_qim78")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.21, 0, 0, 0, 0.5445, 0, 0, 0, 1.21, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_v7236")
+mesh = SubResource("CylinderMesh_3rv54")

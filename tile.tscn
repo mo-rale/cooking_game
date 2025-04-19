@@ -1,0 +1,127 @@
+[gd_scene load_steps=35 format=3 uid="uid://chnv013figsg5"]
+
+[ext_resource type="PackedScene" uid="uid://b52u8u5iws4fq" path="res://assets/tiles/driveway_long.glb" id="1_n68a5"]
+[ext_resource type="PackedScene" uid="uid://yl7b88kodfd7" path="res://assets/tiles/driveway_short.glb" id="2_vl8et"]
+[ext_resource type="PackedScene" uid="uid://bescy28b0stvh" path="res://assets/tiles/fence_large.glb" id="3_8j8p1"]
+[ext_resource type="PackedScene" uid="uid://dtm7jfxuq87it" path="res://assets/tiles/fence_medium.glb" id="4_pvdis"]
+[ext_resource type="PackedScene" uid="uid://dt2xiu2fteika" path="res://assets/tiles/fence_open.glb" id="5_gq2n0"]
+[ext_resource type="PackedScene" uid="uid://bu4pc7aup8bt5" path="res://assets/tiles/fence_rectangle.glb" id="6_te6d8"]
+[ext_resource type="PackedScene" uid="uid://d8pxigijalj6" path="res://assets/tiles/fence_short.glb" id="7_s4mbd"]
+[ext_resource type="PackedScene" uid="uid://cmafdxyr5fp0i" path="res://assets/tiles/fence_small.glb" id="8_j31ok"]
+[ext_resource type="PackedScene" uid="uid://dcyki0o3xxxf2" path="res://assets/tiles/fence_wide.glb" id="9_iuge7"]
+[ext_resource type="PackedScene" uid="uid://l4byyk8tpyik" path="res://assets/tiles/house_type01.glb" id="10_aniuu"]
+[ext_resource type="PackedScene" uid="uid://cjg10h2tot7m4" path="res://assets/tiles/house_type02.glb" id="11_2lfy0"]
+[ext_resource type="PackedScene" uid="uid://cb6ogk2jadbh7" path="res://assets/tiles/house_type03.glb" id="12_oh3n5"]
+[ext_resource type="PackedScene" uid="uid://dpj3bs5gimufg" path="res://assets/tiles/house_type04.glb" id="13_omkkt"]
+[ext_resource type="PackedScene" uid="uid://70mhryqtif7p" path="res://assets/tiles/house_type05.glb" id="14_no2f1"]
+[ext_resource type="PackedScene" uid="uid://u5f3ghsbahbw" path="res://assets/tiles/house_type06.glb" id="15_tv6el"]
+[ext_resource type="PackedScene" uid="uid://c5m17pibkggom" path="res://assets/tiles/house_type07.glb" id="16_3kgyj"]
+[ext_resource type="PackedScene" uid="uid://b11phggaveg3e" path="res://assets/tiles/house_type08.glb" id="17_oldmc"]
+[ext_resource type="PackedScene" uid="uid://btbiqd5f7cd1q" path="res://assets/tiles/house_type09.glb" id="18_1jxtf"]
+[ext_resource type="PackedScene" uid="uid://bonnvvqtjb51h" path="res://assets/tiles/house_type10.glb" id="19_g0e18"]
+[ext_resource type="PackedScene" uid="uid://b574ufet5ua0v" path="res://assets/tiles/house_type11.glb" id="20_hfnxh"]
+[ext_resource type="PackedScene" uid="uid://yjigyiatcfsv" path="res://assets/tiles/house_type12.glb" id="21_hwmba"]
+[ext_resource type="PackedScene" uid="uid://ba76rt5rbehpb" path="res://assets/tiles/house_type13.glb" id="22_aobq1"]
+[ext_resource type="PackedScene" uid="uid://bqm8hf7yy5oq1" path="res://assets/tiles/house_type14.glb" id="23_wciuc"]
+[ext_resource type="PackedScene" uid="uid://ba0d53nuvecnj" path="res://assets/tiles/house_type15.glb" id="24_vwl4s"]
+[ext_resource type="PackedScene" uid="uid://c3js6o3uq7nie" path="res://assets/tiles/house_type16.glb" id="25_gha5q"]
+[ext_resource type="PackedScene" uid="uid://bdocgs0vrubaj" path="res://assets/tiles/house_type17.glb" id="26_qbce7"]
+[ext_resource type="PackedScene" uid="uid://d1jxm3un0mttm" path="res://assets/tiles/house_type18.glb" id="27_j5f84"]
+[ext_resource type="PackedScene" uid="uid://dgvilgo46181u" path="res://assets/tiles/house_type19.glb" id="28_3f27q"]
+[ext_resource type="PackedScene" uid="uid://bvra1yiwy1t48" path="res://assets/tiles/house_type20.glb" id="29_43gre"]
+[ext_resource type="PackedScene" uid="uid://dr3oybxm60gvj" path="res://assets/tiles/house_type21.glb" id="30_qee28"]
+[ext_resource type="PackedScene" uid="uid://cp51h6j6fmtrl" path="res://assets/tiles/path_long.glb" id="31_f34gl"]
+[ext_resource type="PackedScene" uid="uid://c67ayrfpchyih" path="res://assets/tiles/path_short.glb" id="32_0vsv3"]
+[ext_resource type="PackedScene" uid="uid://b87gyd88k0jci" path="res://assets/tiles/path_tilesLong.glb" id="33_jq81g"]
+[ext_resource type="PackedScene" uid="uid://cxtjgr1gpa10j" path="res://assets/tiles/path_tilesShort.glb" id="34_jkewd"]
+
+[node name="Tile" type="Node3D"]
+
+[node name="driveway_long2" parent="." instance=ExtResource("1_n68a5")]
+
+[node name="driveway_short2" parent="." instance=ExtResource("2_vl8et")]
+
+[node name="fence_large2" parent="." instance=ExtResource("3_8j8p1")]
+
+[node name="fence_medium2" parent="." instance=ExtResource("4_pvdis")]
+
+[node name="fence_open2" parent="." instance=ExtResource("5_gq2n0")]
+
+[node name="fence_rectangle2" parent="." instance=ExtResource("6_te6d8")]
+
+[node name="fence_short2" parent="." instance=ExtResource("7_s4mbd")]
+
+[node name="fence_small2" parent="." instance=ExtResource("8_j31ok")]
+
+[node name="fence_wide2" parent="." instance=ExtResource("9_iuge7")]
+
+[node name="house_type012" parent="." instance=ExtResource("10_aniuu")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type022" parent="." instance=ExtResource("11_2lfy0")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type032" parent="." instance=ExtResource("12_oh3n5")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type042" parent="." instance=ExtResource("13_omkkt")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type052" parent="." instance=ExtResource("14_no2f1")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type062" parent="." instance=ExtResource("15_tv6el")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type072" parent="." instance=ExtResource("16_3kgyj")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type082" parent="." instance=ExtResource("17_oldmc")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type092" parent="." instance=ExtResource("18_1jxtf")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type102" parent="." instance=ExtResource("19_g0e18")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type112" parent="." instance=ExtResource("20_hfnxh")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type122" parent="." instance=ExtResource("21_hwmba")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type132" parent="." instance=ExtResource("22_aobq1")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type142" parent="." instance=ExtResource("23_wciuc")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type152" parent="." instance=ExtResource("24_vwl4s")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type162" parent="." instance=ExtResource("25_gha5q")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type172" parent="." instance=ExtResource("26_qbce7")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type182" parent="." instance=ExtResource("27_j5f84")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type192" parent="." instance=ExtResource("28_3f27q")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type202" parent="." instance=ExtResource("29_43gre")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="house_type212" parent="." instance=ExtResource("30_qee28")]
+transform = Transform3D(6.79478, 0, 0, 0, 6.79478, 0, 0, 0, 6.79478, 0, 0, 0)
+
+[node name="path_long2" parent="." instance=ExtResource("31_f34gl")]
+
+[node name="path_short2" parent="." instance=ExtResource("32_0vsv3")]
+
+[node name="path_tilesLong2" parent="." instance=ExtResource("33_jq81g")]
+
+[node name="path_tilesShort2" parent="." instance=ExtResource("34_jkewd")]

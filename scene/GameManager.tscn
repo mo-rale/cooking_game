@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://baxq8mbxpnbv8"]
+
+[ext_resource type="Script" uid="uid://cdhdarnhoe5cq" path="res://script/GameManager.gd" id="1_r2w6d"]
+
+[node name="GameManager" type="Node3D"]
+script = ExtResource("1_r2w6d")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CashLabel" type="Label" parent="UI"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 77.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 100
+text = "Cash: $0"

@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bo8vniub8a5at"]
+
+[ext_resource type="Script" uid="uid://vpvwf5g0jjsf" path="res://script/food_boxes/pizza_box.gd" id="1_mra6k"]
+[ext_resource type="PackedScene" uid="uid://dy0g7vgvcaarg" path="res://scene/food/food_pizza.tscn" id="2_2h8fi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc33p"]
+albedo_color = Color(0.489994, 0.815059, 1.54018e-06, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pispp"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0jyqa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixj6u"]
+size = Vector3(2.42725, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_asi3r"]
+size = Vector3(2.43262, 1, 1)
+
+[node name="pizza_box" type="StaticBody3D"]
+script = ExtResource("1_mra6k")
+food_scene = ExtResource("2_2h8fi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.43786, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_fc33p")
+mesh = SubResource("BoxMesh_pispp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.116069, 0, 0, 0, -0.0095424, -0.324018, 0, 0.53439, -0.00578587, -0.355886, 0.1687, 0.082829)
+mesh = SubResource("CylinderMesh_0jyqa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0090332, 0, 0)
+shape = SubResource("BoxShape3D_ixj6u")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000488281, 0, 0)
+shape = SubResource("BoxShape3D_asi3r")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

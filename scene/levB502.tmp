@@ -1,0 +1,88 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcfpleuek72kd"]
+
+[ext_resource type="PackedScene" uid="uid://yte4x5sapher" path="res://scene/palyer.tscn" id="2_qlbdq"]
+[ext_resource type="PackedScene" uid="uid://dox7woko783ad" path="res://scene/cooking_station.tscn" id="3_f8s4g"]
+[ext_resource type="Texture2D" uid="uid://b8uj85m06ak7s" path="res://icon.svg" id="4_agkuj"]
+[ext_resource type="PackedScene" uid="uid://dt6ki5fj7bans" path="res://scene/food_burger.tscn" id="4_ijrnx"]
+[ext_resource type="PackedScene" uid="uid://d6mnky2r6dcx" path="res://scene/burger_box.tscn" id="5_t0xhf"]
+[ext_resource type="PackedScene" uid="uid://mtlbkisx0qql" path="res://scene/cooking_station_oven.tscn" id="6_3bujh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_w00e3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5x02v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjikk"]
+albedo_texture = ExtResource("4_agkuj")
+uv1_scale = Vector3(30, 30, 30)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_emsxe"]
+size = Vector2(40, 40)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r6q27"]
+data = PackedVector3Array(20, 0, 20, -20, 0, 20, 20, 0, -20, -20, 0, 20, -20, 0, -20, 20, 0, -20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_evd15"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fr4qp"]
+sky_material = SubResource("ProceduralSkyMaterial_evd15")
+
+[sub_resource type="Environment" id="Environment_6vrii"]
+background_mode = 2
+sky = SubResource("Sky_fr4qp")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0122197, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.847985, -10.0386)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_w00e3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_5x02v")
+
+[node name="characters" type="Node3D" parent="."]
+
+[node name="palyer" parent="characters" instance=ExtResource("2_qlbdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01222, -7)
+
+[node name="environment" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00338292, 0, 0.0100245)
+material_override = SubResource("StandardMaterial3D_xjikk")
+mesh = SubResource("PlaneMesh_emsxe")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="environment/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_r6q27")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="environment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="environment"]
+environment = SubResource("Environment_6vrii")
+
+[node name="cookingStation_grill" parent="." instance=ExtResource("3_f8s4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08689, 0.327784, -8.11042)
+
+[node name="RigidBody3D2" parent="." instance=ExtResource("4_ijrnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37979, 0.695056, -9.02669)
+
+[node name="RigidBody3D3" parent="." instance=ExtResource("4_ijrnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72233, 0.782885, -8.87623)
+
+[node name="burger_box" parent="." instance=ExtResource("5_t0xhf")]
+transform = Transform3D(0.0360856, 0, -0.999349, 0, 1, 0, 0.999349, 0, 0.0360856, 4.33504, 0.401363, -5.77883)
+
+[node name="cookingStation_grill2" parent="." instance=ExtResource("6_3bujh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95794, 0.648183, -10.6726)
+cooking_time = 5.0

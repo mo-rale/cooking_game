@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://d6mnky2r6dcx"]
+
+[ext_resource type="Script" uid="uid://b4pvhbge7wbbs" path="res://script/food_boxes/burger_box.gd" id="1_enh4b"]
+[ext_resource type="PackedScene" uid="uid://dt6ki5fj7bans" path="res://scene/food/food_burger.tscn" id="2_6i32q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obnur"]
+albedo_color = Color(0.497474, 0.497474, 0.497474, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kive"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xjyvy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0spa"]
+size = Vector3(2.04883, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrxxy"]
+size = Vector3(1.97266, 1, 1)
+
+[node name="burger_box" type="StaticBody3D"]
+script = ExtResource("1_enh4b")
+food_scene = ExtResource("2_6i32q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.61564, 0, 0, 0, 1.24309, 0, 0, 0, 1.24309, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_obnur")
+mesh = SubResource("BoxMesh_4kive")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.108, 0, 0, 0, -1.65229e-08, -0.216, 0, 0.378, -9.44166e-09, -0.372977, 0.274865, 0.216082)
+mesh = SubResource("CylinderMesh_xjyvy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.28288, 0, 0, 0, 1.28288, 0, 0, 0, 1.28288, 0.00375842, 0, 0)
+shape = SubResource("BoxShape3D_g0spa")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.29613, 0, 0, 0, 1.29613, 0, 0, 0, 1.29613, 0.00858977, 0, 0)
+shape = SubResource("BoxShape3D_xrxxy")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

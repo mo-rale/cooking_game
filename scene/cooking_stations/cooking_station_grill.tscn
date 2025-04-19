@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=3 uid="uid://dox7woko783ad"]
+
+[ext_resource type="Script" uid="uid://th3sv2lu2upc" path="res://script/cooking_stations/cooking_station_grill.gd" id="1_bgnob"]
+[ext_resource type="AudioStream" uid="uid://clioljig4nwje" path="res://audio/sizzling-loop.mp3" id="2_p3qic"]
+[ext_resource type="AudioStream" uid="uid://dbnaddr1mvh83" path="res://audio/bellding-254774.mp3" id="3_fbx1g"]
+[ext_resource type="AudioStream" uid="uid://mwrr12y5ruue" path="res://audio/sizzling-place.mp3" id="4_bo5jq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d8ui8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtcys"]
+size = Vector3(1.04639, 1.01031, 1.0647)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ncch4"]
+size = Vector3(1, 0.295242, 1.07031)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb7uo"]
+albedo_color = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7jm3e"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jpd5d"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l0j3x"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_446m3"]
+albedo_color = Color(1, 0.0117647, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kkvvm"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.342049, 0, 0)
+script = ExtResource("1_bgnob")
+
+[node name="cooking" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_p3qic")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.82394, 0, 0, 0, 1.82394, 0, 0, 0, 1.82394, 0, 0, 0)
+mesh = SubResource("BoxMesh_d8ui8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.82131, 0, 0, 0, 1.82131, 0, 0, 0, 1.82131, 0.0432817, 0.00391366, 0.00942233)
+shape = SubResource("BoxShape3D_dtcys")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.89241, 0, 0, 0, 1.89241, 0, 0, 0, 1.89241, 0, 0.732424, -0.0129364)
+shape = SubResource("BoxShape3D_ncch4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1.99011, 0, 0, 0, 0.517471, 0, 0, 0, 1.99011, 0, 0.660742, 0)
+material_override = SubResource("StandardMaterial3D_nb7uo")
+mesh = SubResource("BoxMesh_7jm3e")
+
+[node name="CookingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="smoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04178, 0)
+amount = 500
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_jpd5d")
+draw_pass_1 = SubResource("BoxMesh_l0j3x")
+
+[node name="heat" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.88523, 0, 0, 0, 0.00859335, 0, 0, 0, 1.77412, 7.62809e-05, 0.915213, 0.00349414)
+material_override = SubResource("StandardMaterial3D_446m3")
+mesh = SubResource("BoxMesh_kkvvm")
+
+[node name="cooked" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fbx1g")
+
+[node name="place" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_bo5jq")

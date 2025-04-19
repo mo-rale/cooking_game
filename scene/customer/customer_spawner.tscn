@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmjneev86g4p6"]
+
+[ext_resource type="Script" uid="uid://cfeioq0w13k0" path="res://script/customer/customer_spawner.gd" id="1_l4u5n"]
+[ext_resource type="PackedScene" uid="uid://dsfi70j1vm5sl" path="res://scene/character/male_1.tscn" id="2_t6ouj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rglmo"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rf3kq"]
+
+[node name="customer_spawwner" type="Node3D"]
+script = ExtResource("1_l4u5n")
+CUSTOMER_SCENES = Array[PackedScene]([ExtResource("2_t6ouj")])
+max_customers = 4
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnPoint"]
+transform = Transform3D(0.43818, 0, 0, 0, 0.43818, 0, 0, 0, 0.43818, 0, -1.1006, 0)
+material_override = SubResource("StandardMaterial3D_rglmo")
+mesh = SubResource("BoxMesh_rf3kq")
+
+[node name="CustomerQueue" type="Node3D" parent="."]
